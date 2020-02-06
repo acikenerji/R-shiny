@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ekler | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı</title>
+  <meta name="description" content="Ekler | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ekler | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ekler | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı" />
+  
+  
+  
+
+<meta name="author" content="Baran Doğru" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="shiny-uygulamasına-genel-bakış.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href=index.html>Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Giriş</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#amaç"><i class="fa fa-check"></i><b>1.1</b> Amaç</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#motivasyon"><i class="fa fa-check"></i><b>1.2</b> Motivasyon</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html"><i class="fa fa-check"></i><b>2</b> Hazırlıklar ve İlk Shiny Uygulaması</a><ul>
+<li class="chapter" data-level="2.1" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#kurulum"><i class="fa fa-check"></i><b>2.1</b> Kurulum</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#r-ve-rstudionun-indirilmesi-rstudio-cloud"><i class="fa fa-check"></i><b>2.1.1</b> R ve RStudio’nun İndirilmesi / RStudio Cloud</a></li>
+<li class="chapter" data-level="2.1.2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#kurulumun-test-edilmesi"><i class="fa fa-check"></i><b>2.1.2</b> Kurulumun Test Edilmesi</a></li>
+<li class="chapter" data-level="2.1.3" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-r-script-dosyasının-oluşturulması"><i class="fa fa-check"></i><b>2.1.3</b> İlk R Script Dosyasının Oluşturulması</a></li>
+<li class="chapter" data-level="2.1.4" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#rda-paketler-hakkında"><i class="fa fa-check"></i><b>2.1.4</b> R’da Paketler Hakkında</a></li>
+<li class="chapter" data-level="2.1.5" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#gerekli-paketlerin-indirilip-yüklenmesi"><i class="fa fa-check"></i><b>2.1.5</b> Gerekli Paketlerin İndirilip Yüklenmesi</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-shiny-uygulaması"><i class="fa fa-check"></i><b>2.2</b> İlk Shiny Uygulaması</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#çevrimiçi-çalıştırma"><i class="fa fa-check"></i><b>2.2.1</b> Çevrimiçi Çalıştırma</a></li>
+<li class="chapter" data-level="2.2.2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-shiny-uygulamasının-oluşturulması"><i class="fa fa-check"></i><b>2.2.2</b> İlk Shiny Uygulamasının Oluşturulması</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Shiny Uygulamasına Genel Bakış</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#shiny-uygulamasının-en-basit-hali"><i class="fa fa-check"></i><b>3.1</b> Shiny Uygulamasının En Basit Hali</a></li>
+<li class="chapter" data-level="3.2" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#shiny-uygulamasının-genel-hatları"><i class="fa fa-check"></i><b>3.2</b> Shiny Uygulamasının Genel Hatları</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#yan-panel"><i class="fa fa-check"></i><b>3.2.1</b> Yan Panel</a></li>
+<li class="chapter" data-level="3.2.2" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#server-ve-ana-panel"><i class="fa fa-check"></i><b>3.2.2</b> Server ve Ana Panel</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html"><i class="fa fa-check"></i>Ekler</a><ul>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html#yazar-hakkında"><i class="fa fa-check"></i>Yazar Hakkında</a></li>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html#rstudio-cloudda-çalışma"><i class="fa fa-check"></i>RStudio Cloud’da Çalışma</a></li>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html#örnek-projenin-kodu-ve-çalıştırma-linki"><i class="fa fa-check"></i>Örnek Projenin Kodu ve Çalıştırma Linki</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href=ekler.html#yazar-hakkında>Yazar Hakkında</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ekler" class="section level1 unnumbered">
+<h1>Ekler</h1>
+<div id="yazar-hakkında" class="section level2 unnumbered">
+<h2>Yazar Hakkında</h2>
+<ul>
+<li><em>Baran Doğru</em></li>
+</ul>
+<p>Baran Doğru, Boğaziçi Üniversitesi Endüstri Mühendisliği öğrencisidir. Veri bilimine büyük ilgi duyan Baran Doğru Algopoly’de staj yaptığı dönemde bu dökumanın oluşturulmasında büyük pay sahibi olmuştur. Kendisine ulaşmak için <a href="https://www.linkedin.com/in/barandogru/" target="_blank">LinkedIn</a> hesabını ziyaret edebilirsiniz.</p>
+</div>
+<div id="rstudio-cloudda-çalışma" class="section level2 unnumbered">
+<h2>RStudio Cloud’da Çalışma</h2>
+<p>RStudio Cloud, R ve RStudio’yu bilgisayarınıza indirmeden çevrimiçi olarak kodlarınızı yazabileceğiniz, çalışmalarınızı is arkadaşlarınızla rahatça paylaşabileceğiniz, gerekli paketleri bilgisayarınıza yükleyip yüklemediğinizi dert etmeyeceğiniz tamamen ücretsiz bir platformdur.</p>
+<p>RStudio Cloud’a erişmek ve platformu kullanmak için aşağıdaki adımları izleyebilirsiniz.</p>
+<ol style="list-style-type: decimal">
+<li>Tercih ettiğiniz web tarayıcıda “RStudio Cloud” yazarak aratılınca karşınıza çıkan ilk linke tıkladığınızda bu ekranla karşılaşacaksınız. Ana ekranın sağ üst köşesindeki “Sign Up” butonuna tıklayarak kayıt ekranına ulaşın.</li>
+</ol>
+<p><img src="ana_ekran.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Karşınıza çıkan kayıt formunu doldurun.</li>
+</ol>
+<p><img src="kayit_ekrani.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Kaydınızı tamamlayın ve hesabınıza giriş yapın. Artık RStudio Cloud’u kullanmaya hazırsınız.</li>
+</ol>
+<p><img src="hesap_ekrani.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>İlk projenizi oluşturmak için “New Project” butonuna tıklayın.</li>
+</ol>
+<p><img src="ilk_proje.png" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Açılan ilk projenize R Script dosyası eklemek için ise üstteki bardan “File”, “New File” ve “R Script” sırasıyla seçin. Artık R’da kod yazmaya hazırsınız.</li>
+</ol>
+<p><img src="ilk_rscript.png" /></p>
+</div>
+<div id="örnek-projenin-kodu-ve-çalıştırma-linki" class="section level2 unnumbered">
+<h2>Örnek Projenin Kodu ve Çalıştırma Linki</h2>
+<p>Bu aşamada <a href="index.html#motivasyon">Motivasyon</a> kısmında gösterilen uygulamanın kodu ve çalıştırma linki paylaşılacaktır. Bu örnek bu kitapta anlatılan seviyenin biraz üstünde olabilir, herhangi bir soru durumunda yazara ulaşmak için <a href="ekler.html#yazar-hakkında">Yazar Hakkında</a> bölümünde verilen iletişim bilgisi kullanılabilir.</p>
+<ul>
+<li>Uygulamayı bilgisayarınızda çalıştırmak için aşağıdaki kodu çalıştırabilirsiniz,</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">runGitHub</span>(<span class="st">&quot;R-shiny&quot;</span>, <span class="st">&quot;acikenerji&quot;</span>, <span class="dt">subdir =</span> <span class="st">&quot;docs/barandogru_shinyBookExamples/final_project&quot;</span>)</a></code></pre></div>
+<ul>
+<li>Uygulamanın kodu ise aşağıdaki gibidir,</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># gerekli paketlerin yüklenmesi</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">library</span>(shiny)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="kw">library</span>(DT)</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co"># verinin indirilmesi</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9">ptfsmf &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">url</span>(<span class="st">&quot;https://github.com/acikenerji/verianalizi101/blob/master/duzenlenmis_ptfsmf.rds?raw=true&quot;</span>))</a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co"># Kullanıcı arayüzünün tanımlanması</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12">ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</a>
+<a class="sourceLine" id="cb11-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb11-14" data-line-number="14">    <span class="co"># Uygulama başlığının girilmesi</span></a>
+<a class="sourceLine" id="cb11-15" data-line-number="15">    <span class="kw">titlePanel</span>(<span class="st">&quot;2019 YILI PİYASA TAKAS FİYATI - SİSTEM MARJİNAL FİYATI VERİSİ&quot;</span>),</a>
+<a class="sourceLine" id="cb11-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb11-17" data-line-number="17">    <span class="co"># Kenar çubuğunun tanımlanması</span></a>
+<a class="sourceLine" id="cb11-18" data-line-number="18">    <span class="kw">sidebarLayout</span>(</a>
+<a class="sourceLine" id="cb11-19" data-line-number="19">        <span class="kw">sidebarPanel</span>(</a>
+<a class="sourceLine" id="cb11-20" data-line-number="20">            (<span class="dt">title =</span> <span class="st">&quot;İncelemek istediğiniz veriyi ve tarihi seçiniz.&quot;</span>),</a>
+<a class="sourceLine" id="cb11-21" data-line-number="21">            <span class="kw">selectInput</span>(<span class="st">&quot;variableIn&quot;</span>, <span class="st">&quot;1. İncelemek istediğiniz değişkeni seçiniz.&quot;</span> , </a>
+<a class="sourceLine" id="cb11-22" data-line-number="22">                        <span class="dt">choices=</span><span class="kw">c</span>(<span class="st">&quot;Hepsi&quot;</span>, <span class="st">&quot;PTF&quot;</span>, <span class="st">&quot;SMF&quot;</span>), <span class="dt">selected=</span><span class="st">&quot;Hepsi&quot;</span>),</a>
+<a class="sourceLine" id="cb11-23" data-line-number="23">            <span class="kw">dateRangeInput</span>(<span class="st">&quot;dateIn&quot;</span>, </a>
+<a class="sourceLine" id="cb11-24" data-line-number="24">                      <span class="st">&quot;2. İncelemek istediğiniz tarih aralığını seçiniz.&quot;</span>,</a>
+<a class="sourceLine" id="cb11-25" data-line-number="25">                      <span class="dt">start=</span><span class="kw">min</span>(ptfsmf<span class="op">$</span>Tarih),</a>
+<a class="sourceLine" id="cb11-26" data-line-number="26">                      <span class="dt">end=</span><span class="kw">max</span>(ptfsmf<span class="op">$</span>Tarih),</a>
+<a class="sourceLine" id="cb11-27" data-line-number="27">                      <span class="dt">min=</span><span class="kw">min</span>(ptfsmf<span class="op">$</span>Tarih), </a>
+<a class="sourceLine" id="cb11-28" data-line-number="28">                      <span class="dt">max=</span><span class="kw">max</span>(ptfsmf<span class="op">$</span>Tarih), </a>
+<a class="sourceLine" id="cb11-29" data-line-number="29">                      <span class="dt">format=</span><span class="st">&quot;dd/mm/yyyy&quot;</span>, </a>
+<a class="sourceLine" id="cb11-30" data-line-number="30">                      <span class="dt">separator=</span><span class="st">&quot;ve&quot;</span>,</a>
+<a class="sourceLine" id="cb11-31" data-line-number="31">                      <span class="dt">language=</span><span class="st">&quot;tr&quot;</span>,</a>
+<a class="sourceLine" id="cb11-32" data-line-number="32">                      <span class="dt">weekstart=</span><span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb11-33" data-line-number="33">            <span class="kw">p</span>(<span class="st">&quot;Kullanılan veri &quot;</span>, tags<span class="op">$</span><span class="kw">a</span>(<span class="dt">href =</span> <span class="st">&quot;https://rapor.epias.com.tr/rapor/xhtml/ptfSmfListeleme.xhtml&quot;</span>, </a>
+<a class="sourceLine" id="cb11-34" data-line-number="34">                                         <span class="st">&quot;EPİAŞ Raporlama Sayfası&#39;ndan&quot;</span>, </a>
+<a class="sourceLine" id="cb11-35" data-line-number="35">                                         <span class="dt">target =</span> <span class="st">&quot;_blank&quot;</span>), </a>
+<a class="sourceLine" id="cb11-36" data-line-number="36">              <span class="st">&quot; sayfasından alınmıştır.&quot;</span>),</a>
+<a class="sourceLine" id="cb11-37" data-line-number="37">            <span class="kw">p</span>(<span class="st">&quot;Bu app Boğaziçi Üniversitesi Endüstri Mühendisliği öğrencisi&quot;</span>, </a>
+<a class="sourceLine" id="cb11-38" data-line-number="38">              <span class="kw">strong</span>(<span class="st">&quot;Baran Doğru&quot;</span>), <span class="st">&quot;tarafından hazırlanmıştır.&quot;</span>, </a>
+<a class="sourceLine" id="cb11-39" data-line-number="39">              <span class="st">&quot;Kendisine&quot;</span>, tags<span class="op">$</span><span class="kw">a</span>(<span class="dt">href =</span> <span class="st">&quot;https://www.linkedin.com/in/barandogru&quot;</span>, <span class="st">&quot;LinkedIn&quot;</span>, </a>
+<a class="sourceLine" id="cb11-40" data-line-number="40">                                  <span class="dt">target =</span> <span class="st">&quot;_blank&quot;</span>),</a>
+<a class="sourceLine" id="cb11-41" data-line-number="41">              <span class="st">&quot;hesabından ulaşabilirsiniz.&quot;</span>)</a>
+<a class="sourceLine" id="cb11-42" data-line-number="42">        ),</a>
+<a class="sourceLine" id="cb11-43" data-line-number="43"></a>
+<a class="sourceLine" id="cb11-44" data-line-number="44">        <span class="co"># Ana panonun tanımlanması</span></a>
+<a class="sourceLine" id="cb11-45" data-line-number="45">        <span class="kw">mainPanel</span>(</a>
+<a class="sourceLine" id="cb11-46" data-line-number="46">           <span class="kw">tabsetPanel</span>(<span class="dt">type =</span> <span class="st">&quot;tab&quot;</span>, </a>
+<a class="sourceLine" id="cb11-47" data-line-number="47">                       <span class="kw">tabPanel</span>(<span class="st">&quot;Grafik&quot;</span>, <span class="kw">plotOutput</span>(<span class="st">&quot;plot1&quot;</span>)),</a>
+<a class="sourceLine" id="cb11-48" data-line-number="48">                       <span class="kw">tabPanel</span>(<span class="st">&quot;Veri Seti Özeti&quot;</span>, <span class="kw">verbatimTextOutput</span>(<span class="st">&quot;summary&quot;</span>)),</a>
+<a class="sourceLine" id="cb11-49" data-line-number="49">                       <span class="kw">tabPanel</span>(<span class="dt">title =</span> <span class="st">&quot;Ham Veri&quot;</span>, <span class="kw">dataTableOutput</span>(<span class="st">&quot;data&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>))</a>
+<a class="sourceLine" id="cb11-50" data-line-number="50">                       </a>
+<a class="sourceLine" id="cb11-51" data-line-number="51">                       ),</a>
+<a class="sourceLine" id="cb11-52" data-line-number="52">        )</a>
+<a class="sourceLine" id="cb11-53" data-line-number="53">    )</a>
+<a class="sourceLine" id="cb11-54" data-line-number="54">)</a>
+<a class="sourceLine" id="cb11-55" data-line-number="55"></a>
+<a class="sourceLine" id="cb11-56" data-line-number="56"><span class="co"># Arka planda işlemleri uygulayan &quot;server&quot;ın tanımlanması</span></a>
+<a class="sourceLine" id="cb11-57" data-line-number="57">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</a>
+<a class="sourceLine" id="cb11-58" data-line-number="58">    </a>
+<a class="sourceLine" id="cb11-59" data-line-number="59">    <span class="co"># grafik çıktısının tanımlanması</span></a>
+<a class="sourceLine" id="cb11-60" data-line-number="60">    output<span class="op">$</span>plot1 &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</a>
+<a class="sourceLine" id="cb11-61" data-line-number="61">        </a>
+<a class="sourceLine" id="cb11-62" data-line-number="62">        <span class="co"># verinin grafik icin düzenlenmesi</span></a>
+<a class="sourceLine" id="cb11-63" data-line-number="63">        ptfsmf &lt;-<span class="st"> </span>ptfsmf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">Saat =</span> <span class="kw">hour</span>(Tarih), <span class="dt">Tarih =</span> <span class="kw">as.Date</span>(Tarih)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-64" data-line-number="64"><span class="st">                             </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> PTF<span class="op">:</span>SMF, <span class="dt">names_to =</span> <span class="st">&quot;Degisken&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;Fiyat&quot;</span>)</a>
+<a class="sourceLine" id="cb11-65" data-line-number="65">        </a>
+<a class="sourceLine" id="cb11-66" data-line-number="66">        pl_df &lt;-<span class="st"> </span>ptfsmf <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb11-67" data-line-number="67"><span class="st">                 </span><span class="kw">filter</span>(Tarih <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>dateIn[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>Tarih <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>dateIn[<span class="dv">2</span>]) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-68" data-line-number="68"><span class="st">                 </span><span class="kw">group_by</span>(Degisken, Saat) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-69" data-line-number="69"><span class="st">                 </span><span class="kw">summarise</span>(<span class="dt">Fiyat =</span> <span class="kw">mean</span>(Fiyat))</a>
+<a class="sourceLine" id="cb11-70" data-line-number="70">        </a>
+<a class="sourceLine" id="cb11-71" data-line-number="71">        <span class="cf">if</span>(input<span class="op">$</span>variableIn <span class="op">!=</span><span class="st"> &quot;Hepsi&quot;</span>){</a>
+<a class="sourceLine" id="cb11-72" data-line-number="72">            pl_df &lt;-<span class="st"> </span>pl_df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Degisken <span class="op">==</span><span class="st"> </span>input<span class="op">$</span>variableIn)</a>
+<a class="sourceLine" id="cb11-73" data-line-number="73">            <span class="kw">ggplot</span>(pl_df, <span class="kw">aes</span>(<span class="dt">x=</span>Saat, <span class="dt">y=</span>Fiyat, <span class="dt">color=</span>Degisken)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-74" data-line-number="74"><span class="st">                </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-75" data-line-number="75"><span class="st">                </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-76" data-line-number="76"><span class="st">                </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">23</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-77" data-line-number="77"><span class="st">                </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Saatlere Göre Fiyatlar - Çizgi Grafiği&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-78" data-line-number="78"><span class="st">                </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>), <span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, </a>
+<a class="sourceLine" id="cb11-79" data-line-number="79">                      <span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</a>
+<a class="sourceLine" id="cb11-80" data-line-number="80">        }</a>
+<a class="sourceLine" id="cb11-81" data-line-number="81">        <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb11-82" data-line-number="82">            <span class="kw">ggplot</span>(pl_df, <span class="kw">aes</span>(<span class="dt">x=</span>Saat, <span class="dt">y=</span>Fiyat, <span class="dt">color=</span>Degisken)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-83" data-line-number="83"><span class="st">                </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-84" data-line-number="84"><span class="st">                </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-85" data-line-number="85"><span class="st">                </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">23</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-86" data-line-number="86"><span class="st">                </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Saatlere Göre Fiyatlar - Çizgi Grafiği&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-87" data-line-number="87"><span class="st">                </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>), <span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, </a>
+<a class="sourceLine" id="cb11-88" data-line-number="88">                      <span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</a>
+<a class="sourceLine" id="cb11-89" data-line-number="89">        }</a>
+<a class="sourceLine" id="cb11-90" data-line-number="90"></a>
+<a class="sourceLine" id="cb11-91" data-line-number="91">   </a>
+<a class="sourceLine" id="cb11-92" data-line-number="92">    })</a>
+<a class="sourceLine" id="cb11-93" data-line-number="93">    </a>
+<a class="sourceLine" id="cb11-94" data-line-number="94">    <span class="co"># tablo çıktısının tanımlanması</span></a>
+<a class="sourceLine" id="cb11-95" data-line-number="95">    output<span class="op">$</span>data &lt;-<span class="st"> </span><span class="kw">renderDataTable</span>({</a>
+<a class="sourceLine" id="cb11-96" data-line-number="96">        ptfsmf<span class="op">$</span>Tarih &lt;-<span class="st"> </span><span class="kw">as.character</span>(ptfsmf<span class="op">$</span>Tarih)</a>
+<a class="sourceLine" id="cb11-97" data-line-number="97">        </a>
+<a class="sourceLine" id="cb11-98" data-line-number="98">        ptfsmf &lt;-<span class="st"> </span>ptfsmf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Tarih <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>dateIn[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>Tarih <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>dateIn[<span class="dv">2</span>]) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb11-99" data-line-number="99"><span class="st">                             </span><span class="kw">select</span>(Tarih, PTF, SMF)</a>
+<a class="sourceLine" id="cb11-100" data-line-number="100">        </a>
+<a class="sourceLine" id="cb11-101" data-line-number="101">        <span class="cf">if</span>(input<span class="op">$</span>variableIn <span class="op">!=</span><span class="st"> &quot;Hepsi&quot;</span>){</a>
+<a class="sourceLine" id="cb11-102" data-line-number="102">            ptfsmf &lt;-<span class="st"> </span>ptfsmf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(Tarih, input<span class="op">$</span>variableIn)</a>
+<a class="sourceLine" id="cb11-103" data-line-number="103">            <span class="kw">datatable</span>(ptfsmf)</a>
+<a class="sourceLine" id="cb11-104" data-line-number="104">        }</a>
+<a class="sourceLine" id="cb11-105" data-line-number="105">        <span class="cf">else</span></a>
+<a class="sourceLine" id="cb11-106" data-line-number="106">            <span class="kw">datatable</span>(ptfsmf)</a>
+<a class="sourceLine" id="cb11-107" data-line-number="107">    })</a>
+<a class="sourceLine" id="cb11-108" data-line-number="108">    </a>
+<a class="sourceLine" id="cb11-109" data-line-number="109">    <span class="co"># özet çıktısının tanımlanması</span></a>
+<a class="sourceLine" id="cb11-110" data-line-number="110">    output<span class="op">$</span>summary &lt;-<span class="st"> </span><span class="kw">renderPrint</span>({</a>
+<a class="sourceLine" id="cb11-111" data-line-number="111">        </a>
+<a class="sourceLine" id="cb11-112" data-line-number="112">        ptfsmf &lt;-<span class="st"> </span>ptfsmf <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb11-113" data-line-number="113"><span class="st">                     </span><span class="kw">mutate</span>(<span class="dt">Tarih_temp =</span> <span class="kw">as.Date</span>(Tarih)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb11-114" data-line-number="114"><span class="st">                     </span><span class="kw">filter</span>(Tarih_temp <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>dateIn[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>Tarih_temp <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>dateIn[<span class="dv">2</span>]) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-115" data-line-number="115"><span class="st">                     </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(Tarih_temp, NDF, PDF))</a>
+<a class="sourceLine" id="cb11-116" data-line-number="116">        </a>
+<a class="sourceLine" id="cb11-117" data-line-number="117">        <span class="cf">if</span>(input<span class="op">$</span>variableIn <span class="op">!=</span><span class="st"> &quot;Hepsi&quot;</span>){</a>
+<a class="sourceLine" id="cb11-118" data-line-number="118">            ptfsmf &lt;-<span class="st"> </span>ptfsmf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(Tarih, input<span class="op">$</span>variableIn)</a>
+<a class="sourceLine" id="cb11-119" data-line-number="119">            <span class="kw">summary</span>(ptfsmf)</a>
+<a class="sourceLine" id="cb11-120" data-line-number="120">        }</a>
+<a class="sourceLine" id="cb11-121" data-line-number="121">        <span class="cf">else</span></a>
+<a class="sourceLine" id="cb11-122" data-line-number="122">            <span class="kw">summary</span>(ptfsmf)</a>
+<a class="sourceLine" id="cb11-123" data-line-number="123">        </a>
+<a class="sourceLine" id="cb11-124" data-line-number="124">    })</a>
+<a class="sourceLine" id="cb11-125" data-line-number="125">    </a>
+<a class="sourceLine" id="cb11-126" data-line-number="126">}</a>
+<a class="sourceLine" id="cb11-127" data-line-number="127"></a>
+<a class="sourceLine" id="cb11-128" data-line-number="128"><span class="co"># Uygulamanın çalıştırılması</span></a>
+<a class="sourceLine" id="cb11-129" data-line-number="129"><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</a></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="shiny-uygulamasına-genel-bakış.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["book.pdf", "PDF"], ["book.epub", "EPUB"]],
+"toc": {
+"collapse": "none",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Shiny Uygulamasına Genel Bakış | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı</title>
+  <meta name="description" content="3 Shiny Uygulamasına Genel Bakış | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Shiny Uygulamasına Genel Bakış | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Shiny Uygulamasına Genel Bakış | Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı" />
+  
+  
+  
+
+<meta name="author" content="Baran Doğru" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hazırlıklar-ve-ilk-shiny-uygulaması.html"/>
+<link rel="next" href="ekler.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href=index.html>Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Giriş</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#amaç"><i class="fa fa-check"></i><b>1.1</b> Amaç</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#motivasyon"><i class="fa fa-check"></i><b>1.2</b> Motivasyon</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html"><i class="fa fa-check"></i><b>2</b> Hazırlıklar ve İlk Shiny Uygulaması</a><ul>
+<li class="chapter" data-level="2.1" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#kurulum"><i class="fa fa-check"></i><b>2.1</b> Kurulum</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#r-ve-rstudionun-indirilmesi-rstudio-cloud"><i class="fa fa-check"></i><b>2.1.1</b> R ve RStudio’nun İndirilmesi / RStudio Cloud</a></li>
+<li class="chapter" data-level="2.1.2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#kurulumun-test-edilmesi"><i class="fa fa-check"></i><b>2.1.2</b> Kurulumun Test Edilmesi</a></li>
+<li class="chapter" data-level="2.1.3" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-r-script-dosyasının-oluşturulması"><i class="fa fa-check"></i><b>2.1.3</b> İlk R Script Dosyasının Oluşturulması</a></li>
+<li class="chapter" data-level="2.1.4" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#rda-paketler-hakkında"><i class="fa fa-check"></i><b>2.1.4</b> R’da Paketler Hakkında</a></li>
+<li class="chapter" data-level="2.1.5" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#gerekli-paketlerin-indirilip-yüklenmesi"><i class="fa fa-check"></i><b>2.1.5</b> Gerekli Paketlerin İndirilip Yüklenmesi</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-shiny-uygulaması"><i class="fa fa-check"></i><b>2.2</b> İlk Shiny Uygulaması</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#çevrimiçi-çalıştırma"><i class="fa fa-check"></i><b>2.2.1</b> Çevrimiçi Çalıştırma</a></li>
+<li class="chapter" data-level="2.2.2" data-path="hazırlıklar-ve-ilk-shiny-uygulaması.html"><a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-shiny-uygulamasının-oluşturulması"><i class="fa fa-check"></i><b>2.2.2</b> İlk Shiny Uygulamasının Oluşturulması</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Shiny Uygulamasına Genel Bakış</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#shiny-uygulamasının-en-basit-hali"><i class="fa fa-check"></i><b>3.1</b> Shiny Uygulamasının En Basit Hali</a></li>
+<li class="chapter" data-level="3.2" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#shiny-uygulamasının-genel-hatları"><i class="fa fa-check"></i><b>3.2</b> Shiny Uygulamasının Genel Hatları</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#yan-panel"><i class="fa fa-check"></i><b>3.2.1</b> Yan Panel</a></li>
+<li class="chapter" data-level="3.2.2" data-path="shiny-uygulamasına-genel-bakış.html"><a href="shiny-uygulamasına-genel-bakış.html#server-ve-ana-panel"><i class="fa fa-check"></i><b>3.2.2</b> Server ve Ana Panel</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html"><i class="fa fa-check"></i>Ekler</a><ul>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html#yazar-hakkında"><i class="fa fa-check"></i>Yazar Hakkında</a></li>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html#rstudio-cloudda-çalışma"><i class="fa fa-check"></i>RStudio Cloud’da Çalışma</a></li>
+<li class="chapter" data-level="" data-path="ekler.html"><a href="ekler.html#örnek-projenin-kodu-ve-çalıştırma-linki"><i class="fa fa-check"></i>Örnek Projenin Kodu ve Çalıştırma Linki</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href=ekler.html#yazar-hakkında>Yazar Hakkında</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Shiny ile Dinamik Web Sitesi Oluşturma El Kitabı</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="shiny-uygulamasına-genel-bakış" class="section level1">
+<h1><span class="header-section-number">3</span> Shiny Uygulamasına Genel Bakış</h1>
+<p>Bu bölümde bir Shiny uygulamasının genel hatları ve önemli fonksiyonları detaylı şekilde anlatılacaktır. Her bir adımda gösterilen uygulamanın kodları paylaşılacak ve kullanılan yeni fonksiyonlar açıklanacaktır. Aynı zamanda uygulamaları çevrimiçi görüntüleyebilmeniz için de tek satırlık kodlar paylaşılacaktır.</p>
+<div id="shiny-uygulamasının-en-basit-hali" class="section level2">
+<h2><span class="header-section-number">3.1</span> Shiny Uygulamasının En Basit Hali</h2>
+<p>Uygulamanın açıklanmasına geçmeden önce uygulamaya göz atmanızı tavsiye ediyoruz. Uygulamayı çalıştırmak için aşağıdaki kodu çalıştırabilirsiniz. (<code>library(shiny)</code> komutunu bu aşamadan önce çalıştırdığınızdan emin olun.)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">runGitHub</span>(<span class="st">&quot;R-shiny&quot;</span>, <span class="st">&quot;acikenerji&quot;</span>, <span class="dt">subdir =</span> <span class="st">&quot;docs/barandogru_shinyBookExamples/almost_empty&quot;</span>)</a></code></pre></div>
+<p>Karşınıza şu şeklide bir uygulama çıkmalı.</p>
+<p><img src="almost_empty.png" /></p>
+<p>Şimdi ise daha önce <a href="hazırlıklar-ve-ilk-shiny-uygulaması.html#ilk-shiny-uygulamasının-oluşturulması">İlk Shiny Uygulamasının Oluşturulması</a> bölümünde anlattığımız şekilde yeni bir <code>app.R</code> belgesi oluşturun ve belgenin içini boşaltıp aşağıdaki kodu yapıştırdıktan sonra sağ üst kısımdan “Run App” butonuna tıklayın.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(shiny)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co"># Kullanıcı arayüzünün tanımlanması</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="co"># Uygulama başlığının girilmesi</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="kw">titlePanel</span>(<span class="st">&quot;İlk Uygulama&quot;</span>),</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="co"># Kenar çubuğunun tanımlanması</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="kw">sidebarLayout</span>(</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="kw">sidebarPanel</span>((<span class="st">&quot;İlk kenar çubuğu&quot;</span>)</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">    ),</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">    <span class="co"># Ana panonun tanımlanması</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">    <span class="kw">mainPanel</span>((<span class="st">&quot;İlk ana pano&quot;</span>)</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">    )</a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">  )</a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">)</a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co"># Arka planda işlemleri uygulayan &quot;server&quot;ın tanımlanması</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">}</a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co"># Uygulamanın çalıştırılması</span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</a></code></pre></div>
+<p>Aynı uygulamayı çalıştırdığınızı göreceksiniz. Bu uygulama bir Shiny uygulamasının alabileceği en basit hal. Burada yapılan işlemleri açıklayacak olursak,</p>
+<ul>
+<li><p>Öncelikle <code>library(shiny)</code> komutu ile Shiny paketi yükleniyor.</p></li>
+<li><p>Sonra uygulama içerisinde <code>ui</code> ve <code>server</code> adında iki objenin içinde belirli özellikler tanımlanıyor. (Bu objeler ve tanımlanan özellikler ileride daha detaylı anlatılacaktır.)</p></li>
+<li><p>En sonda da “Run App” butonuna tıkladığınızda uygulamanın çalışmasını sağlayan <code>shinyApp(ui = ui, server = server)</code> komutu çalıştırılıyor.</p></li>
+</ul>
+<p>Şimdi bir Shiny uygulamasının genel hatlarını inceleyelim.</p>
+</div>
+<div id="shiny-uygulamasının-genel-hatları" class="section level2">
+<h2><span class="header-section-number">3.2</span> Shiny Uygulamasının Genel Hatları</h2>
+<p>Shiny uygulaması temel olarak <code>ui</code> yani kullanıcının karşısına çıkan kullanıcı arayüzü (“User Interface”) ve <code>server</code> yani programın arka planında işlemleri gerçekleştiren kısımlarından oluşur.</p>
+<p><code>ui</code> kısmı kullanıcının uygulamayı açtığında karşısına çıkan her şey, <code>server</code> kısmı ise arka planda yapılan bütün operasyonların merkezi olarak adlandırılabilir. Bir Shiny uygulaması temel olarak 3 kısımdan oluşur. Bu üç kısımın iletişimleri ise temel olarak şu şekildedir.</p>
+<p>“Yan Panel” kullanıcı girdilerinin (input) alındığı kısımdır. Oluşturulacak interaktif web sitesi için kullanıcıların seçimler yaptığı ya da metinler / sayılar girdiği bölümdür. Alınan bu inputlar sonrasında ise “Ana Panel”de gösterilecek olan çıktıyı (output) oluşturmak üzere “Server” fonksiyonuna gönderilirler.</p>
+<p>Yani özetle iletişimde aşağıdaki sıra izlenir.</p>
+<p><span class="math display">\[  Yan Panel (Sidebar Panel) -&gt; Server -&gt; Ana Panel (Main Panel) \]</span></p>
+<p>Kullanıcı karşısına çıkan bir Shiny uygulaması ise “Yan Panel”, “Ana Panel” ve “Başlık Panel”inden oluşur. Bu düzen aşağıdaki ekran görüntüsünde daha rahat görülebilir.</p>
+<blockquote>
+<p>“Server” kısmının kullanıcı arayüzünde direkt bir karşılığı yoktur.</p>
+</blockquote>
+<p><img src="outline.png" /></p>
+<p>Şimdi ise bu iletişimlerin sürdürülmesini sağlayan kısımları ve kodları inceleyelim.</p>
+<div id="yan-panel" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Yan Panel</h3>
+<p>Yan Panel’de tanımlanabilecek çok sayıda girdi (input) çeşidi vardır. Bu input çeşitlerinden bir kısmını kullanılan fonksiyon isimleri ile birlikte sıralayacak olursak,</p>
+<ul>
+<li><p>Onay kutucukları koymak için <code>checkboxGroupInput()</code> fonksiyonu,</p></li>
+<li><p>Tarih girdisi için <code>dateInput()</code> ve tarih aralığı girdisi için <code>dateRangeInput()</code> fonksiyonu,</p></li>
+<li><p>Belirli opsiyonların açılan bir listede sıralanması için <code>selectInput()</code> fonksiyonu,</p></li>
+<li><p>Kaydırma çubuğuyla girdi almak için <code>sliderInput()</code>,</p></li>
+<li><p>Bir yazı girdisi almak için ise <code>textInput()</code> fonksiyonları kullanılabilir.</p></li>
+</ul>
+<blockquote>
+<p>Daha fazla input fonksiyonu için <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf" target="_blank">shiny Cheatsheet</a> dökümanına göz atabilirsiniz.</p>
+</blockquote>
+<p>Şimdi bu fonksiyonların örneklendirildiği uygulamayı çalıştırmak için aşağıdaki kodu çalıştırabilirsiniz.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">runGitHub</span>(<span class="st">&quot;R-shiny&quot;</span>, <span class="st">&quot;acikenerji&quot;</span>, <span class="dt">subdir =</span> <span class="st">&quot;docs/barandogru_shinyBookExamples/just_input&quot;</span>)</a></code></pre></div>
+<p>Karşınıza şu şekilde bir uygulama çıkacak,</p>
+<p><img src="just_input.png" /></p>
+<p>Bu uygulamanın R kodu ise aşağıdaki gibi,</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(shiny)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co"># Kullanıcı arayüzünün tanımlanması</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="co"># Uygulama başlığının girilmesi</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">  <span class="kw">titlePanel</span>(<span class="st">&quot;İlk Uygulama&quot;</span>),</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="co"># Kenar çubuğunun tanımlanması</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">  <span class="kw">sidebarLayout</span>(</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    <span class="kw">sidebarPanel</span>((<span class="st">&quot;İlk Yan Panel&quot;</span>),</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">                 <span class="kw">checkboxGroupInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;kutucuk&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;İstediğiniz kutucuğu şeçiniz.&quot;</span>,</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">                                    <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;Seçenek1&quot;</span>, <span class="st">&quot;Seçenek2&quot;</span>)),</a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">                 <span class="kw">dateInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;tarih&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;İstediğiniz tarihi seçiniz.&quot;</span>, </a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">                           <span class="dt">min =</span> <span class="st">&quot;2019-01-01&quot;</span>, <span class="dt">max =</span> <span class="st">&quot;2019-12-31&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;2019-01-01&quot;</span>,</a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">                           <span class="dt">format=</span><span class="st">&quot;dd/mm/yyyy&quot;</span>, <span class="dt">language=</span><span class="st">&quot;tr&quot;</span>, <span class="dt">weekstart=</span><span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;menü&quot;, label = &quot;</span>İstediğiniz seçimi yapınız.<span class="st">&quot;, </span></a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="st">                             choices = c(&quot;</span>Seçenek1<span class="st">&quot;, &quot;</span>Seçenek2<span class="st">&quot;)),</span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="st">                 sliderInput(inputId = &quot;</span>kaydırmaCubugu<span class="st">&quot;, </span></a>
+<a class="sourceLine" id="cb7-17" data-line-number="17"><span class="st">                             label = &quot;</span>Aşağıdaki çubuğu kullanarak seçiminizi yapınız.<span class="st">&quot;,</span></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="st">                             min = 0, max = 30, value = 15),</span></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19"><span class="st">                 textInput(inputId = &quot;</span>yazı<span class="st">&quot;, label = &quot;</span>Metin giriniz.<span class="st">&quot;, placeholder = &quot;</span>Buraya Metin<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb7-20" data-line-number="20"><span class="st">    ),</span></a>
+<a class="sourceLine" id="cb7-21" data-line-number="21"><span class="st">    # Ana panonun tanımlanması</span></a>
+<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="st">    mainPanel((&quot;</span>İlk Ana Panel<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb7-23" data-line-number="23"><span class="st">    )</span></a>
+<a class="sourceLine" id="cb7-24" data-line-number="24"><span class="st">  )</span></a>
+<a class="sourceLine" id="cb7-25" data-line-number="25"><span class="st">)</span></a>
+<a class="sourceLine" id="cb7-26" data-line-number="26"><span class="st"># Arka planda işlemleri uygulayan &quot;</span>server<span class="st">&quot;ın tanımlanması</span></a>
+<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="st">server &lt;- function(input, output) {</span></a>
+<a class="sourceLine" id="cb7-28" data-line-number="28"><span class="st">}</span></a>
+<a class="sourceLine" id="cb7-29" data-line-number="29"><span class="st"># Uygulamanın çalıştırılması</span></a>
+<a class="sourceLine" id="cb7-30" data-line-number="30"><span class="st">shinyApp(ui = ui, server = server)</span></a></code></pre></div>
+<p>Şimdi bu kodun üzerinden beraber geçelim. Fark edilebileceği üzere <a href="shiny-uygulamasına-genel-bakış.html#shiny-uygulamasının-en-basit-hali">Shiny Uygulamasının En Basit Hali</a> bölümünden farklı olan tek kısım <code>sidebarPanel()</code> fonksiyonu, bu nedenle de uygulamanın herhangi bir çıktısı olmaması oldukça normal.</p>
+<ul>
+<li><p>Bu input fonksiyonlarının tamamının ortak iki parametresi var, <code>inputId</code> ve <code>label</code>. <code>inputId</code> parametresi alınan inputun daha sonra “Server” kısmında kullanılabilmesi için o inputa yalnızca kodun bildiği bir isim vermek, <code>label</code> parametresi ise kullanıcının karşısına çıkan mesajın oluşturulmasından sorumludur.</p></li>
+<li><p>Bu iki parametre dışında, <code>checkboxGroupInput()</code> ve <code>selectInput()</code> input fonksiyonlarının <code>choices</code> adlı ortak bir parametreleri vardır. Bu parametre kullanıcının karşısına çıkacak seçeneklerin belirlenmesini sağlar.</p></li>
+<li><p><code>dateInput()</code> fonksiyonunun ise <code>min</code>, <code>max</code>, <code>value</code>, <code>format</code>, <code>language</code>, <code>format</code>, <code>weekstart</code> gibi birçok parametresini görüyoruz. Bu parametreler sırasıyla minimum değerin belirlenmesi, maksimum değerin belirlenmesi, başlangıç değerinin belirlenmesi, gösterilecek tarihin dilinin seçilmesi, gösterilecek tarihin formatının belirlenmesi ve gösterilecek tarihte haftanın ilk gününün hangi gün olacağının belirlenmesinden sorumludur.</p></li>
+<li><p><code>sliderInput()</code> fonksiyonunun <code>min</code>, <code>max</code> ve <code>value</code> olmak üzere 3 daha parametresini görüyoruz. Bu parametreler sırasıyla kaydırma çubuğunun minimum, maksimum ve başlangıç değerlerini belirlememizi sağlar.</p></li>
+<li><p><code>textInput()</code> fonksiyonunun ise ek olarak <code>placeholder</code> adında bir parametresini görüyoruz, bu parametre kullanıcı herhangi bir metin girmeden önce metin kutusunda yer alan “Yer Tutucu” metin olarak tanımlanabilir.</p></li>
+</ul>
+<blockquote>
+<p>Bu fonksiyonların yukarıda bahsedilen parametreler dışında da pek çok parametresi olduğuna dikkat edilmelidir. Bu parametreler için <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf" target="_blank">shiny Cheatsheet</a> dökümanına göz atabilirsiniz.</p>
+</blockquote>
+<p>Şimdi ise bu inputların “Server” fonksiyonunda gerekli işlemlerden geçerek “Ana Panel”de nasıl yansıtıldığını inceleyelim. “Server” ve “Ana Panel” kısımları birbiriyle oldukça bağlantılı olduğundan bu kısımlar birlikte ele alınacaktır.</p>
+</div>
+<div id="server-ve-ana-panel" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Server ve Ana Panel</h3>
+<p>Ana panelde birçok farklı çıktı formatı sergilenebilir. Bu farklı opsiyonlardan bahsetmeden önce “input”larla bu iki kısım arasındaki bağlantının nasıl çalıştığını incelemek adına örnek uygulamayı aşağıdaki kod yardımıyla çalıştırın.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">runGitHub</span>(<span class="st">&quot;R-shiny&quot;</span>, <span class="st">&quot;acikenerji&quot;</span>, <span class="dt">subdir =</span> <span class="st">&quot;docs/barandogru_shinyBookExamples/input_output&quot;</span>)</a></code></pre></div>
+<p>Karşınıza şu şekilde bir uygulama çıkacak.</p>
+<p><img src="input_output.png" /></p>
+<p>Siz de kendi bilgilerinizi girerek uygulamanın farklı çıktılar verdiğini gözlemleyebilirsiniz.</p>
+<p>Şimdi ise bu uygulamanın koduna bakalım.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">library</span>(shiny)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co"># Kullanıcı arayüzünün tanımlanması</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">  <span class="co"># Uygulama başlığının girilmesi</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">  <span class="kw">titlePanel</span>(<span class="st">&quot;Merhabalar,&quot;</span>),</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">  <span class="co"># Kenar çubuğunun tanımlanması</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">  <span class="kw">sidebarLayout</span>(</a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">    <span class="kw">sidebarPanel</span>((<span class="st">&quot;Lütfen bilgilerinizi giriniz. &quot;</span>),</a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">                 <span class="kw">textInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;yazı&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Adınızı giriniz.&quot;</span>, <span class="dt">placeholder =</span> <span class="st">&quot;Adınız&quot;</span>),</a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">                 <span class="kw">dateInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;tarih&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Doğum tarihinizi seçiniz.&quot;</span>, </a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">                           <span class="dt">min =</span> <span class="st">&quot;1975-01-01&quot;</span>, <span class="dt">max =</span> <span class="st">&quot;2019-12-31&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;1975-01-01&quot;</span>,</a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">                           <span class="dt">format=</span><span class="st">&quot;dd/mm/yyyy&quot;</span>, <span class="dt">language=</span><span class="st">&quot;tr&quot;</span>, <span class="dt">weekstart=</span><span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb9-13" data-line-number="13">                 <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;kutucuk&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Cinsiyetinizi seçiniz.&quot;</span>,</a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">                                    <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;Kadın&quot;</span>, <span class="st">&quot;Erkek&quot;</span>, <span class="st">&quot;Diğer&quot;</span>), <span class="dt">selected =</span> <span class="ot">NULL</span>),</a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">                 <span class="kw">sliderInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;kaydırmaCubugu&quot;</span>, </a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">                             <span class="dt">label =</span> <span class="st">&quot;Boyunuzu seçiniz. (cm)&quot;</span>,</a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">                             <span class="dt">min =</span> <span class="dv">100</span>, <span class="dt">max =</span> <span class="dv">250</span>, <span class="dt">value =</span> <span class="dv">150</span>)</a>
+<a class="sourceLine" id="cb9-18" data-line-number="18">                 </a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">    ),</a>
+<a class="sourceLine" id="cb9-20" data-line-number="20">    <span class="co"># Ana panonun tanımlanması</span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">    <span class="kw">mainPanel</span>((<span class="st">&quot;Bilgileriniz şu şekilde: &quot;</span>),</a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">              <span class="kw">textOutput</span>(<span class="st">&quot;text1&quot;</span>),</a>
+<a class="sourceLine" id="cb9-23" data-line-number="23">              <span class="kw">textOutput</span>(<span class="st">&quot;text2&quot;</span>),</a>
+<a class="sourceLine" id="cb9-24" data-line-number="24">              <span class="kw">textOutput</span>(<span class="st">&quot;text3&quot;</span>),</a>
+<a class="sourceLine" id="cb9-25" data-line-number="25">              <span class="kw">textOutput</span>(<span class="st">&quot;text4&quot;</span>)</a>
+<a class="sourceLine" id="cb9-26" data-line-number="26">    )</a>
+<a class="sourceLine" id="cb9-27" data-line-number="27">  )</a>
+<a class="sourceLine" id="cb9-28" data-line-number="28">)</a>
+<a class="sourceLine" id="cb9-29" data-line-number="29"><span class="co"># Arka planda işlemleri uygulayan &quot;server&quot;ın tanımlanması</span></a>
+<a class="sourceLine" id="cb9-30" data-line-number="30">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</a>
+<a class="sourceLine" id="cb9-31" data-line-number="31">  output<span class="op">$</span>text1 &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">paste</span>(<span class="st">&quot;Selam &quot;</span>,<span class="kw">as.character</span>(input<span class="op">$</span>yazı), <span class="st">&quot; :)&quot;</span>))</a>
+<a class="sourceLine" id="cb9-32" data-line-number="32">  output<span class="op">$</span>text2 &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">paste</span>(<span class="st">&quot;Doğum Tarihiniz: &quot;</span>,<span class="kw">as.character</span>(input<span class="op">$</span>tarih)))</a>
+<a class="sourceLine" id="cb9-33" data-line-number="33">  output<span class="op">$</span>text3 &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">paste</span>(<span class="st">&quot;Cinsiyetiniz: &quot;</span>,<span class="kw">as.character</span>(input<span class="op">$</span>kutucuk)))</a>
+<a class="sourceLine" id="cb9-34" data-line-number="34">  output<span class="op">$</span>text4 &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">paste</span>(<span class="st">&quot;Boyunuz: &quot;</span>,<span class="kw">as.character</span>(input<span class="op">$</span>kaydırmaCubugu), <span class="st">&quot; cm&quot;</span>))</a>
+<a class="sourceLine" id="cb9-35" data-line-number="35">}</a>
+<a class="sourceLine" id="cb9-36" data-line-number="36"><span class="co"># Uygulamanın çalıştırılması</span></a>
+<a class="sourceLine" id="cb9-37" data-line-number="37"><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</a></code></pre></div>
+<p>Burada bir daha “sidebarPanel” kısmındaki input alma süreci anlatılmayacaktır. “Input”lar alındıktan sonra “Server” içinde farklı <code>render</code> fonksiyonları ile (Bu örnekte yalnızca <code>renderText</code> fonksiyonu kullanılmıştır.) çağrılırlar. Bu çağrılma sırasında <code>$</code> operatörü ve daha önce “Input” kısmında <code>inputId</code> parametresine verilen isim kullanılır. Daha sonra bunlar kullanıcının seçeceği farklı isimdeki “output” değişkenlerine eşitlenirler.</p>
+<p>En sonda ise, bu “output” değişkenleri farklı <code>output</code> fonksiyonları (Bu örnekte yalnızca <code>textOutput</code> fonksiyonu kullanılmıştır.) içinde çağrılarak “Ana Panel”de gösterilmeleri sağlanır. Buradaki çağırma sırasında ise <code>output</code> fonksiyonu ile kullanılan <code>$</code> operatörü sonrasında belirlenen isim kullanılır.</p>
+<p>Temel olarak bir Shiny uygulamasının akışı şu şekilde ifade edilebilir.</p>
+<p><span class="math display">\[  Input -&gt; Render -&gt; Output \]</span></p>
+<p>Şimdi ise farklı render fonksiyonlarını ve onlarla bağlantılı olan output fonksiyonlarını aşağıda inceleyelim.</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>render</code> fonksiyonları</th>
+<th><code>output</code> fonksiyonları</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>renderText()</td>
+<td>textOutput()</td>
+</tr>
+<tr class="even">
+<td>renderPrint()</td>
+<td>verbatimTextOutput()</td>
+</tr>
+<tr class="odd">
+<td>renderPlot()</td>
+<td>plotOutput()</td>
+</tr>
+<tr class="even">
+<td>renderImage()</td>
+<td>imageOutput()</td>
+</tr>
+<tr class="odd">
+<td>renderTable()</td>
+<td>tableOutput()</td>
+</tr>
+</tbody>
+</table>
+<p>Bu fonksiyonlar ve daha fazlası hakkında daha detaylı bilgi için <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf" target="_blank">shiny Cheatsheet</a> dökümanına göz atabilirsiniz.</p>
+<blockquote>
+<p>Shiny uygulamaları kullanıcının hayal gücü ve istekleri doğrultusunda şekillenmektedir ve çok kompleks uygulamalar oluşturmak da mümkündür. Bu dökümanda temel bir giriş yapılması hedeflenmiş, bundan sonrası kullanıcıya bırakılmıştır. Herhangi bir sorunuz olması durumunda kitabın yazarına <a href="ekler.html#yazar-hakkında">Yazar Hakkında</a> kısmında belirtilen iletişim bilgisinden ulaşabilirsiniz.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hazırlıklar-ve-ilk-shiny-uygulaması.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ekler.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["book.pdf", "PDF"], ["book.epub", "EPUB"]],
+"toc": {
+"collapse": "none",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
